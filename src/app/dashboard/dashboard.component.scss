@@ -1,0 +1,149 @@
+/* Base */
+.page {
+  min-height: 100vh;
+  background: #f6f8fb;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+  color: #1a1a1a;
+}
+
+/* Hero */
+.hero {
+  margin-top: 70px;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 3.4rem;
+  font-weight: 700;
+  letter-spacing: -1px;
+  color: #0f1c3f;
+}
+
+.hero p {
+  margin-top: 12px;
+  font-size: 1.05rem;
+  color: #5f6b85;
+}
+
+/* Grid */
+.role-grid {
+  margin-top: 80px;
+  display: grid;
+  grid-template-columns: repeat(2, 380px);
+  gap: 50px;
+}
+
+/* Cards */
+.role-card {
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 38px 36px;
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.05),
+    0 1px 0 rgba(255, 255, 255, 0.6) inset;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.role-card:hover {
+  transform: translateY(-6px);
+  box-shadow:
+    0 22px 45px rgba(0, 0, 0, 0.08),
+    0 1px 0 rgba(255, 255, 255, 0.6) inset;
+}
+
+/* Header strip */
+.role-header {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 22px;
+}
+
+.role-tag {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.6px;
+  padding: 6px 14px;
+  border-radius: 20px;
+  text-transform: uppercase;
+}
+
+/* Titles */
+.role-card h2 {
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin-bottom: 14px;
+}
+
+/* Text */
+.role-card p {
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: #5b647a;
+  margin-bottom: 32px;
+}
+
+/* Button */
+.primary {
+  margin-top: auto;
+  border: none;
+  border-radius: 10px;
+  padding: 14px 24px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  background: #0f1c3f;
+  color: #ffffff;
+  transition: background 0.25s ease, transform 0.2s ease;
+}
+
+.primary:hover {
+  background: #172a63;
+  transform: translateY(-1px);
+}
+
+/* Role accents */
+.technician .role-tag {
+  background: rgba(255, 167, 38, 0.15);
+  color: #f57c00;
+}
+
+.doctor .role-tag {
+  background: rgba(76, 175, 80, 0.15);
+  color: #2e7d32;
+}
+
+.technician {
+  border-top: 4px solid #f57c00;
+}
+
+.doctor {
+  border-top: 4px solid #2e7d32;
+}
+
+/* Footer */
+.footer {
+  margin-top: auto;
+  width: 100%;
+  padding: 24px 40px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  color: #8a94ab;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .role-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .hero h1 {
+    font-size: 2.6rem;
+  }
+}
