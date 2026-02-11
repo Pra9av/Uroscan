@@ -1,149 +1,238 @@
-/* Base */
+// Colors
+$primary: #1976d2;
+$orange: #ff6f00;
+$green: #00c853;
+$purple: #7b1fa2;
+$red: #d32f2f;
+
+// Reset
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', -apple-system, sans-serif;
+  overflow: hidden;
+}
+
+// Page
 .page {
-  min-height: 100vh;
-  background: #f6f8fb;
+  height: 100vh;
+  background: linear-gradient(135deg, #e8f4f8 0%, #f0e7f8 50%, #fef3e7 100%);
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
-  color: #1a1a1a;
+  justify-content: space-between;
+  padding: 2vh 0;
 }
 
-/* Hero */
+// Animations
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+
+// Hero
 .hero {
-  margin-top: 70px;
   text-align: center;
+  animation: fadeInDown 0.8s;
 }
 
 .hero h1 {
-  font-size: 3.4rem;
-  font-weight: 700;
-  letter-spacing: -1px;
-  color: #0f1c3f;
+  font-size: 3.2rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, $primary, $purple, $red);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 8px;
 }
 
 .hero p {
-  margin-top: 12px;
-  font-size: 1.05rem;
+  font-size: 1rem;
   color: #5f6b85;
 }
 
-/* Grid */
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, rgba(76, 175, 80, 0.15), rgba(33, 150, 243, 0.15));
+  border: 1px solid rgba(76, 175, 80, 0.3);
+  padding: 6px 14px;
+  border-radius: 50px;
+  font-size: 0.75rem;
+  color: #1b5e20;
+  margin-bottom: 12px;
+}
+
+.hero-badge::before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  background: linear-gradient(135deg, #4caf50, #2e7d32);
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+
+// Grid
 .role-grid {
-  margin-top: 80px;
   display: grid;
   grid-template-columns: repeat(2, 380px);
   gap: 50px;
 }
 
-/* Cards */
+// Cards
 .role-card {
-  background: #ffffff;
+  background: white;
   border-radius: 18px;
-  padding: 38px 36px;
-  box-shadow:
-    0 10px 30px rgba(0, 0, 0, 0.05),
-    0 1px 0 rgba(255, 255, 255, 0.6) inset;
+  padding: 32px 30px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02), 0 12px 24px rgba(0, 0, 0, 0.04);
   display: flex;
   flex-direction: column;
-  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  transition: all 0.4s;
 }
 
 .role-card:hover {
   transform: translateY(-6px);
-  box-shadow:
-    0 22px 45px rgba(0, 0, 0, 0.08),
-    0 1px 0 rgba(255, 255, 255, 0.6) inset;
+  box-shadow: 0 22px 45px rgba(0, 0, 0, 0.08);
 }
 
-/* Header strip */
+.role-card h2 {
+  font-size: 1.6rem;
+  margin-bottom: 12px;
+  color: #0f1c3f;
+}
+
+.role-card p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #5b647a;
+}
+
 .role-header {
   display: flex;
-  justify-content: flex-start;
-  margin-bottom: 22px;
+  justify-content: space-between;
+  margin-bottom: 20px;
 }
 
 .role-tag {
-  font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 0.6px;
+  font-size: 0.7rem;
+  font-weight: 700;
   padding: 6px 14px;
   border-radius: 20px;
   text-transform: uppercase;
 }
 
-/* Titles */
-.role-card h2 {
-  font-size: 1.6rem;
-  font-weight: 600;
-  margin-bottom: 14px;
+.role-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  transition: transform 0.3s;
 }
 
-/* Text */
-.role-card p {
-  font-size: 0.95rem;
-  line-height: 1.65;
-  color: #5b647a;
-  margin-bottom: 32px;
+.role-card:hover .role-icon {
+  transform: rotate(5deg);
 }
 
-/* Button */
+// Button
 .primary {
-  margin-top: auto;
   border: none;
   border-radius: 10px;
   padding: 14px 24px;
   font-size: 0.9rem;
   font-weight: 600;
   cursor: pointer;
-  background: #0f1c3f;
-  color: #ffffff;
-  transition: background 0.25s ease, transform 0.2s ease;
+  background: linear-gradient(135deg, $primary, #1565c0);
+  color: white;
+  transition: all 0.3s;
+  box-shadow: 0 4px 12px rgba(25, 118, 210, 0.3);
+  margin-top: 24px;
 }
 
 .primary:hover {
-  background: #172a63;
-  transform: translateY(-1px);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(25, 118, 210, 0.4);
 }
 
-/* Role accents */
+// Technician Theme
+.technician {
+  border-top: 4px solid $orange;
+}
+
 .technician .role-tag {
-  background: rgba(255, 167, 38, 0.15);
-  color: #f57c00;
+  background: linear-gradient(135deg, rgba(255, 167, 38, 0.25), rgba(255, 111, 0, 0.2));
+  color: #e65100;
+  border: 1px solid rgba(255, 111, 0, 0.3);
+}
+
+.technician .role-icon {
+  background: linear-gradient(135deg, rgba(255, 167, 38, 0.2), rgba(255, 111, 0, 0.15));
+  color: $orange;
+  border: 2px solid rgba(255, 111, 0, 0.2);
+}
+
+// Doctor Theme
+.doctor {
+  border-top: 4px solid $green;
 }
 
 .doctor .role-tag {
-  background: rgba(76, 175, 80, 0.15);
-  color: #2e7d32;
+  background: linear-gradient(135deg, rgba(76, 175, 80, 0.25), rgba(0, 200, 83, 0.2));
+  color: #1b5e20;
+  border: 1px solid rgba(0, 200, 83, 0.3);
 }
 
-.technician {
-  border-top: 4px solid #f57c00;
+.doctor .role-icon {
+  background: linear-gradient(135deg, rgba(76, 175, 80, 0.2), rgba(0, 200, 83, 0.15));
+  color: $green;
+  border: 2px solid rgba(0, 200, 83, 0.2);
 }
 
-.doctor {
-  border-top: 4px solid #2e7d32;
-}
-
-/* Footer */
+// Footer
 .footer {
-  margin-top: auto;
   width: 100%;
-  padding: 24px 40px;
+  padding: 20px 40px;
   display: flex;
   justify-content: space-between;
   font-size: 0.8rem;
   color: #8a94ab;
 }
 
-/* Responsive */
-@media (max-width: 900px) {
+// Responsive
+@media (max-width: 1000px) {
   .role-grid {
     grid-template-columns: 1fr;
-    gap: 36px;
+    gap: 30px;
   }
-
+  
   .hero h1 {
-    font-size: 2.6rem;
+    font-size: 2.4rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+  
+  .role-card {
+    padding: 24px 20px;
+  }
+  
+  .footer {
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
   }
 }
