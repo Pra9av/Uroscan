@@ -1,1 +1,37 @@
-/* You can add global styles to this file, and also import other style files */
+/* COMPLETE HARD RESET */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* REMOVE ALL POSSIBLE WHITE EDGES */
+html {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  min-height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+
+  overflow-x: hidden;
+
+  font-family: "Inter", sans-serif;
+
+  /* GRADIENT ON ROOT LEVEL */
+  background:
+    radial-gradient(circle at 20% 30%, rgba(0,198,255,0.15), transparent 40%),
+    radial-gradient(circle at 80% 70%, rgba(123,97,255,0.15), transparent 40%),
+    linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+}
+
+/* ANGULAR ROOT FIX */
+app-root {
+  display: block;
+  min-height: 100vh;
+}
