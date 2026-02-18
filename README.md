@@ -1,13 +1,13 @@
- UroScan – AI-Powered Kidney Stone Detection Platform
- Overview
+🏥 UroScan – AI-Powered Kidney Stone Detection Platform
+📌 Overview
 
 UroScan is a full-stack AI-powered clinical web application designed for automated kidney stone detection from CT scan images.
 It integrates deep learning segmentation with a structured hospital-style review workflow for technicians and doctors.
 
 The platform simulates a real-world medical imaging system with role-based access, AI inference, and diagnostic visualization.
 
-- Features
-- Technician Dashboard
+🚀 Features
+👨‍🔬 Technician Dashboard
 
 Upload CT scan images
 
@@ -19,7 +19,7 @@ View heatmap confidence map
 
 Automatically assign scan to doctor
 
-- Doctor Dashboard
+👨‍⚕️ Doctor Dashboard
 
 View assigned scans
 
@@ -33,7 +33,7 @@ Add clinical notes
 
 Mark scan as Reviewed (status tracking)
 
-- AI Model
+🤖 AI Model
 
 U-Net (ResNet34 encoder)
 
@@ -45,7 +45,7 @@ Confidence-based severity detection
 
 Heatmap visualization using OpenCV
 
-- Architecture
+🏗 Architecture
 
 Frontend → Angular
 Backend → FastAPI
